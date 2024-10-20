@@ -1,0 +1,92 @@
+/* Gradient background based on logo */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #fcbf04, #fdc731, #f3ad03);
+}
+
+/* Board GridPane styling */
+#MainGrid {
+    -fx-background-color: #1f1f1f; /* Dark background to contrast with bright buttons */
+    -fx-hgap: 10; /* Gap between columns */
+    -fx-vgap: 10; /* Gap between rows */
+    -fx-padding: 20; /* Padding around the grid */
+    -fx-border-color: #ffe600; /* Border color similar to logo's yellow */
+    -fx-border-width: 5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 15;
+}
+
+/* Button styling for the game grid */
+.button {
+    -fx-background-color: #ffcc33; /* Bright yellow, similar to the "O" in the logo */
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222831; /* Dark text color */
+    -fx-background-radius: 10;
+    -fx-border-color: #222831; /* Slight border around buttons */
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0); /* Button shadow for depth */
+}
+
+/* Hover effect for the buttons */
+.button:hover {
+    -fx-background-color: #ffd700; /* Lighter yellow on hover */
+}
+
+/* Button when clicked (X or O) */
+.button:pressed {
+    -fx-background-color: #ffdd57; /* Even lighter yellow when pressed */
+}
+
+/* Style for the X and O symbols */
+.x-symbol {
+    -fx-text-fill: #222831; /* Dark text for "X" */
+}
+
+.o-symbol {
+    -fx-text-fill: #fcbf04; /* Bright yellow for "O" */
+}
+
+
+/* Style the entire alert dialog */
+.dialog-pane {
+    -fx-background-color: linear-gradient(to bottom right, #fcbf04, #fdc731); /* Gradient similar to logo */
+    -fx-border-color: #222831; /* Dark border */
+    -fx-border-width: 3;
+    -fx-border-radius: 10;
+}
+
+/* Style the header of the alert */
+.dialog-pane .header-panel {
+    -fx-background-color: #ffd700; /* Bright yellow header */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222831; /* Dark text for contrast */
+}
+
+/* Style the content area of the alert */
+.dialog-pane .content {
+    -fx-font-size: 14px;
+    -fx-text-fill: #222831; /* Text color */
+    -fx-padding: 10;
+}
+
+/* Style the buttons in the alert */
+.dialog-pane .button-bar .button {
+    -fx-background-color: #ffcc33; /* Button color */
+    -fx-font-size: 14px;
+    -fx-text-fill: #222831; /* Dark text for buttons */
+    -fx-border-color: #222831; /* Border for buttons */
+    -fx-border-width: 2;
+    -fx-background-radius: 5;
+}
+
+/* Button hover effect */
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #ffd700; /* Lighter yellow on hover */
+}
+
+/* Button when pressed */
+.dialog-pane .button-bar .button:pressed {
+    -fx-background-color: #ffdd57; /* Even lighter yellow on press */
+}

@@ -5,8 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.WindowEvent;
 
 public class BoardController implements BoardUI {
 
@@ -35,6 +38,8 @@ public class BoardController implements BoardUI {
         updateUi();
         if (board.checkWinner() != null) {
             NotifyWinner(board.checkWinner().getWinningPiece());
+        } else if (board.isBoardFull()) {
+            showAlert("Tie");
         }
     }
 
@@ -66,11 +71,18 @@ public class BoardController implements BoardUI {
     @Override
     public void NotifyWinner(Piece winner) {
         if (winner == Piece.X) {
-            System.out.println("X wins");
-            new Alert(Alert.AlertType.INFORMATION, "X wins").showAndWait();
+            showAlert("X wins");
         } else if (winner == Piece.O) {
-            System.out.println("O wins");
-            new Alert(Alert.AlertType.INFORMATION, "O wins").showAndWait();
+            showAlert("O wins");
         }
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(AlertType.INFORMATION, message);
+        alert.setOnCloseRequest((DialogEvent event) -> {
+            board.initializeBoard();
+            updateUi();
+        });
+        alert.showAndWait();
     }
 }

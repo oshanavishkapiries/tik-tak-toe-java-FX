@@ -51,7 +51,7 @@ public class AiPlayer extends Player {
             }
         }
 
-        if (isBoardFull(pieces)) {
+        if (board.isBoardFull()) {
             return 0;
         }
 
@@ -82,14 +82,5 @@ public class AiPlayer extends Player {
         }
     }
 
-    private boolean isBoardFull(Piece[][] pieces) {
-        for (int i = 0; i < pieces.length; i++) {
-            for (int j = 0; j < pieces[i].length; j++) {
-                if (pieces[i][j] == Piece.EMPTY) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
+
 }
