@@ -10,7 +10,7 @@ public class Winner {
     private int col3;
     private int row3;
 
-    public Winner(Piece winningPiece, int col1, int row1, int col2, int row2, int col3, int row3) {
+    public Winner(Piece winningPiece, int row1, int col1, int row2, int col2, int row3, int col3) {
         this.winningPiece = winningPiece;
         this.col1 = col1;
         this.row1 = row1;

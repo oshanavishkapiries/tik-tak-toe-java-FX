@@ -27,7 +27,7 @@ public class BoardImpl implements Board {
 
     @Override
     public void updateMove(int row, int col, Piece piece) {
-            pieces[row][col] = piece;
+        pieces[row][col] = piece;
     }
 
     @Override
