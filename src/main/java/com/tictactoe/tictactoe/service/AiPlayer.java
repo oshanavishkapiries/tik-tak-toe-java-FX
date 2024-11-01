@@ -7,16 +7,9 @@ public class AiPlayer extends Player {
     }
 
     @Override
-    public void move(int row, int col) {
-        if (board.isLegalMove(row, col)) {
-            board.updateMove(row, col, Piece.O);
-        }
-    }
+    public void move(int bestRow, int bestCol) {
 
-    public void findBestMove() {
         int bestValue = Integer.MIN_VALUE;
-        int bestRow = -1;
-        int bestCol = -1;
         Piece[][] pieces = board.getPieces();
 
         for (int i = 0; i < pieces.length; i++) {
@@ -37,9 +30,12 @@ public class AiPlayer extends Player {
 
 
         if (bestRow != -1 && bestCol != -1) {
-            move(bestRow, bestCol);
+            if (board.isLegalMove(bestRow, bestCol)) {
+                board.updateMove(bestRow, bestCol, Piece.O);
+            }
         }
     }
+
 
     private int minimax(Piece[][] pieces, int depth, boolean isMaximizing) {
         Winner winner = board.checkWinner();
